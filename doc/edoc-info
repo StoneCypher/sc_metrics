@@ -1,0 +1,4 @@
+%% encoding: UTF-8
+{application,sc_metrics}.
+{packages,[]}.
+{modules,[sc_metrics]}.
