@@ -30,7 +30,10 @@ real_unines_test_() ->
         { "0.000000001",    ?_assert(     9.0 == sc_metrics:real_unines(0.000000001)    ) },
         { "0.0000000001",   ?_assert(    10.0 == sc_metrics:real_unines(0.0000000001)   ) },
         { "0.00000000001",  ?_assert(    11.0 == sc_metrics:real_unines(0.00000000001)  ) },
-        { "0.000000000001", ?_assert(    12.0 == sc_metrics:real_unines(0.000000000001) ) }
+        { "0.000000000001", ?_assert(    12.0 == sc_metrics:real_unines(0.000000000001) ) },
+
+        { "error 1.01 out of range",  ?_assertError(function_clause, sc_metrics:real_unines(1.01)  ) },
+        { "error -0.01 out of range", ?_assertError(function_clause, sc_metrics:real_unines(-0.01) ) }
 
     ] }.
 
@@ -60,7 +63,10 @@ real_nines_test_() ->
         { "0.999999999",    ?_assert( EW(  9.0, sc_metrics:real_nines(0.999999999) )    ) },
         { "0.9999999999",   ?_assert( EW( 10.0, sc_metrics:real_nines(0.9999999999) )   ) },
         { "0.99999999999",  ?_assert( EW( 11.0, sc_metrics:real_nines(0.99999999999) )  ) },
-        { "0.999999999999", ?_assert( EW( 12.0, sc_metrics:real_nines(0.999999999999) ) ) }
+        { "0.999999999999", ?_assert( EW( 12.0, sc_metrics:real_nines(0.999999999999) ) ) },
+
+        { "error 1.01 out of range",  ?_assertError(function_clause, sc_metrics:real_nines(1.01)  ) },
+        { "error -0.01 out of range", ?_assertError(function_clause, sc_metrics:real_nines(-0.01) ) }
 
     ] }.
 
@@ -89,7 +95,10 @@ nines_test_() ->
         { "0.000000001",    ?_assert(       9 == sc_metrics:nines(99.9999999)    ) },
         { "0.0000000001",   ?_assert(      10 == sc_metrics:nines(99.99999999)   ) },
         { "0.00000000001",  ?_assert(      11 == sc_metrics:nines(99.999999999)  ) },
-        { "0.000000000001", ?_assert(      12 == sc_metrics:nines(99.9999999999) ) }
+        { "0.000000000001", ?_assert(      12 == sc_metrics:nines(99.9999999999) ) },
+
+        { "error 100.01 out of range", ?_assertError(function_clause, sc_metrics:nines(100.01) ) },
+        { "error -0.01 out of range",  ?_assertError(function_clause, sc_metrics:nines(-0.01)  ) }
 
     ] }.
 
