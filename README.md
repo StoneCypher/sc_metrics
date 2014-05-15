@@ -1,7 +1,7 @@
 sc_metrics
 ==========
 
-Various metrics functions (not metric functions, math guys; look in [sc_math](https://github.com/StoneCypher/sc_metrics/) for that) implemented MIT-freely in Erlang.
+Various metrics functions (not metric functions, math guys; look in [sc_math](https://github.com/StoneCypher/sc_math/) for that) implemented MIT-freely in Erlang.
 
 
 
